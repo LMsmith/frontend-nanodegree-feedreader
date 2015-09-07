@@ -7,15 +7,8 @@ The test suites describe the RSS feeds, the menu and the feed entries
 
 ## Describing RSS feeds
 
- 
     describe('RSS Feeds', function() {
-        /* This is our first test - it tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
-         */
+
 
 All RSS feeds should:
 
