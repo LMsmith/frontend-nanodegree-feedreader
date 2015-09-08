@@ -12,9 +12,9 @@ The test suites describe the RSS feeds, the menu and the feed entries
 ## Describing RSS feeds
 
 All RSS feeds should:
-    Be defined and have a length that is not zero
-    Have a url that is defined and not ‘ ‘
-    Have a name that is defined and not ‘ ‘
+    - Be defined and have a length that is not zero
+    - Have a url that is defined and not ‘ ‘
+    - Have a name that is defined and not ‘ ‘
 
 
 ## Describing the menu
@@ -30,9 +30,3 @@ The feed should have at least one entry
 ## Describing New Feed Selection
 
 The initial feed results should not be the same as the new feed results.
-
-
-      });
-
-
-});
