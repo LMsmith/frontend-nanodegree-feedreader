@@ -19,7 +19,6 @@ $(function() {
     */
 
     // Describing RSS feeds
-
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
@@ -32,14 +31,12 @@ $(function() {
          // All RSS feeds should:
 
         // Be defined and have a length that is not zero
-
         it('should be defined', function() {
           expect(allFeeds).toBeDefined();
           expect(allFeeds.length).not.toBe(0);
         });
 
         // Have a url that is defined and not ' '
-
          it('should have a url', function(){
            for(var i = 0; i < allFeeds.length; i++) {
              expect(allFeeds[i].url).toBeDefined();
@@ -48,7 +45,6 @@ $(function() {
          });
 
          // Have a name that is defined and not ' '
-
          it('should have a name', function(){
            for(var i = 0; i < allFeeds.length; i++) {
              expect(allFeeds[i].name).toBeDefined();
@@ -58,11 +54,9 @@ $(function() {
        });
 
     // Describing the menu
-
     describe('The menu', function() {
 
       // The menu should be hidden on default and toggle visibility when the icon is clicked
-
        it('should be hidden by default', function() {
          expect($('body').hasClass('menu-hidden')).toBeTruthy();
        });
@@ -77,31 +71,28 @@ $(function() {
           $('.menu-icon-link').click();
           expect($('body').hasClass('menu-hidden')).toBeTruthy();
         });
+
       });
 
     //Describing initial feed entries
-
     describe('Initial Entries', function() {
 
       //Load the feed before each test
-
-         beforeEach(function(done){
-          loadFeed(0,done);
-        });
+       beforeEach(function(done){
+        loadFeed(0,done);
+      });
 
         //The feed should have at least one entry
-
         it('should have at least one entry', function(done){
           expect($('.feed').children().length).toBeGreaterThan(0);
           done();
         });
+
       });
 
     //Describing New Feed Selection
 
     describe('New Feed Selection', function() {
-
-
        //The initial feed results should not be the same as the new feed results.
 
       //Feed results from before calling loadFeed()
@@ -130,11 +121,12 @@ $(function() {
       });
 
        it('should change content when a new feed is loaded', function(done) {
-
        expect(newFeed).not.toBe(initialFeed);
          console.log(newFeed);
          console.log(initialFeed);
          done();
        });
+
     });
+    
 });
