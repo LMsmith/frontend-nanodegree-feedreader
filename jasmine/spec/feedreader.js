@@ -34,8 +34,8 @@ $(function() {
         // Be defined and have a length that is not zero
 
         it('should be defined', function() {
-            expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+          expect(allFeeds).toBeDefined();
+          expect(allFeeds.length).not.toBe(0);
         });
 
         // Have a url that is defined and not ' '
@@ -55,8 +55,7 @@ $(function() {
              expect(allFeeds[i].name).not.toBe('');
            }
          });
-
-    });
+       });
 
     // Describing the menu
 
@@ -79,7 +78,6 @@ $(function() {
           expect($('body').hasClass('menu-hidden')).toBeTruthy();
         });
       });
-
 
     //Describing initial feed entries
 
@@ -114,25 +112,29 @@ $(function() {
       //Define newFeed results as the results loaded when loadFeed is called again.
       var newFeed;
 
-         beforeEach(function(done){
-          loadFeed(1, function(){
-            //Set initialFeed equal to the html returned by the loadFeed function before the test is run
-            initialFeed = $('.feed').html();
-            done();
-          });
+       beforeEach(function(done){
+        loadFeed(0, function(){
+          //Set initialFeed equal to the html returned by the loadFeed function before the test is run
+          initialFeed = $('.feed').html();
+          done();
         });
-
-         it('should change content when a new feed is loaded', function(done) {
-           //Check that the loadFeed() function returns results that are different than the initial feed results
-           loadFeed(0, function() {
-             //Set newFeed equal to the html returned by the loadFeed function
-             newFeed = $('.feed').html();
-           });
-           expect(newFeed).not.toBe(initialFeed);
-           done();
-         })
-
       });
 
+      //empty the feed
+      $('.feed').empty();
+      //Check that the loadFeed() function returns results that are different than the initial feed results
+      loadFeed(1, function() {
+        //Set newFeed equal to the html returned by the loadFeed function
+        newFeed = $('.feed').html();
+          return newFeed;
+      });
 
+       it('should change content when a new feed is loaded', function(done) {
+
+       expect(newFeed).not.toBe(initialFeed);
+         console.log(newFeed);
+         console.log(initialFeed);
+         done();
+       });
+    });
 });
